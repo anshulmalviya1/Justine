@@ -1,6 +1,13 @@
-# Fix Screenshot
+# Task 2 -using user input shutdown/restart machine.
 
-def screenshot():
-    now = datetime.datetime.now()
-    now_str = now.strftime("%Y-%m-%d-%H-%M-%S")
-    outFile = pyautogui.screenshot('C:\\Users\\BeingMF\\Pictures\\ImageFile{}.PNG'.format(now_str))
+    elif 'shutdown' in query:
+            if platform == "win32":
+                os.system('shutdown /p /f')
+            elif platform == "linux" or platform == "linux2" or "darwin":
+                os.system('poweroff')
+
+        elif 'restart' in query:
+            if platform == "win32":
+                os.system("restart /r /t  1")
+            elif platform == "linux" or platform == "linux2" or "darwin":
+                os.system("restart /r /t  1")
